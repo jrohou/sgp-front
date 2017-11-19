@@ -1,0 +1,26 @@
+
+<form>
+<div class="form-group">
+  <label for="nom">Nom</label>
+  <input type="text" #nom class="form-control" id="nom" placeholder="Nom">
+</div>
+<div class="form-group">
+  <label for="prenom">Prénom</label>
+  <input type="text" #prenom class="form-control" id="prenom" placeholder="Prénom">
+</div>
+<div class="form-group">
+  <label for="adresse">Adresse</label>
+  <input type="text" #adresse class="form-control" id="adresse" placeholder="Adresse">
+</div>
+<div class="form-group">
+  <label for="codePostal">Code Postal</label>
+  <input type="text" #codePostal class="form-control" id="codePostal" placeholder="Code Postal">
+</div>
+<div class="form-group">
+  <label for="ville">Ville</label>
+  <input type="text" #ville class="form-control" id="ville" placeholder="Ville">
+</div>
+<div class="text-center">
+<button (click)="add(nom,prenom,adresse,codePostal,ville)" class="btn btn-outline-primary">Ajouter un nouveau Collaborateur </button>
+</div>
+</form>
