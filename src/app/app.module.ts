@@ -9,11 +9,13 @@ import { CollaborateurService } from './shared/service/collaborateur.service';
 import { AppComponent } from './app.component';
 import { CreerComponent } from './creer/creer.component';
 import { ListerComponent } from './lister/lister.component';
+import { EditerComponent } from './editer/editer.component';
 
 const appRoutes: Routes = [
 
   {path:'creer', component: CreerComponent},
   {path: 'lister', component: ListerComponent},
+  {path: 'editer/:id', component: EditerComponent},
   {path: '**', redirectTo:'lister'}
 ]
 
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CreerComponent,
-    ListerComponent
+    ListerComponent,
+    EditerComponent
   ],
   imports: [
     BrowserModule,

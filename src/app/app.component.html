@@ -1,31 +1,17 @@
-<div class="font-weight-bold text-center">
-  <h1>Gestion du Personnel</h1>
+<div class="container" style="max-width : 50rem;">
+  <div class="font-weight-bold text-center">
+    <h1>Gestion du Personnel</h1>
+    <h4>Collaborate differente</h4>
+
+
+  <ul class="nav nav-pills text-center">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/creer">Créer un nouveau Collaborateur</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/lister">Lister</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+  </div>
 </div>
-<ngb-carousel>
-    <ng-template ngbSlide>
-      <img src="https://www.viedegeek.fr/media/2016/12/westworld.jpg" class="img-fluid" alt="Photo du Collaborateur"/>
-      <div class="carousel-caption">
-        <h1>Collaborate differente</h1>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <img src="http://i.imgur.com/dwipOgM.jpg" class="img-fluid" alt="Photo du Création"/>
-      <div class="carousel-caption ">
-        <h1>Create a new partner</h1>
-      </div>
-    </ng-template>
-</ngb-carousel>
-
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/creer">Créer un nouveau Collaborateur</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/lister">Lister</a>
-  </li>
-</ul>
-<router-outlet></router-outlet>
-
-<ngb-alert (close)="hit = true" [hidden]="hit"  role="alert">
-  Un nouveau collègue a été ajouté avec succès
-</ngb-alert>

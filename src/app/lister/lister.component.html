@@ -1,8 +1,20 @@
-<div class="col-sm-3" *ngFor="let collaborateur of collaborateurs">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title text-center"> {{collaborateur.nom}}</h4>
-        <h2 class="card-text text-center">{{collaborateur.prenom}}</h2>
-      <!--  <app-sgp-front[collaborateur]="collaborateur"></app-sgp-front>-->
-      </div>
-    </div>
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Prénom</th>
+          <th scope="col">Adresse</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let collaborateur of collaborateurs">
+          <td>{{collaborateur.nom}}</td>
+          <td>{{collaborateur.prenom}}</td>
+          <td>{{collaborateur.adresse}} , {{collaborateur.codePostal}} {{collaborateur.ville}}</td>
+          <td><a class="btn btn-warning" routerLink="/editer/{{collaborateur.id}}">Editer</a></td>
+          <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+        </tr>
+      </tbody>
+    </table>
