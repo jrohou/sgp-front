@@ -12,7 +12,7 @@ export class CollaborateurService {
   constructor(private http:HttpClient) { }
 
   saveCollaborateur(newCollaborateur:Collaborateur):Promise<Collaborateur> {
-    return this.http.post<Collaborateur[]>('http://localhost:8080/collaborateurs',newCollaborateur).toPromise()
+    return this.http.post<Collaborateur>('http://localhost:8080/collaborateurs',newCollaborateur).toPromise()
   }
 
   listerCollaborateur():Promise<Collaborateur[]> {
