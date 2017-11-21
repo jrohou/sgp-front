@@ -17,6 +17,7 @@ export class EditerComponent implements OnInit {
   public departements:Departement[];
   public postes:Poste[];
   id:number;
+  public hit;
 
   constructor(public collaborateurService:CollaborateurService, public departementService:DepartementService, public posteService:PosteService, route:ActivatedRoute) {
 
@@ -28,6 +29,22 @@ export class EditerComponent implements OnInit {
     this.collaborateurService.listerCollaborateur().then(collaborateurs => this.collaborateur = collaborateurs.filter(c => c.id == this.id)[0]);
     this.departementService.listerDepartement().then(departements => this.departements = departements);
     this.posteService.listerPoste().then(postes => this.postes = postes);
+    this.hit = true;
+  }
+
+  edit(idCollab:HTMLInputElement, nom:HTMLInputElement, prenom:HTMLInputElement, adresse:HTMLInputElement, codePostal:HTMLInputElement, ville:HTMLInputElement, departement:HTMLSelectElement, poste:HTMLSelectElement) {
+    const collab = new Collaborateur(nom.value,prenom.value,adresse.value,codePostal.value,ville.value, +departement.value,+poste.value)
+    collab.id =this.id;
+
+    this.collaborateurService.editCollaborateur(collab);
+    console.log(nom.value);
+    this.hit = false;
+    nom.value = "";
+    prenom.value = "";
+    adresse.value = "";
+    codePostal.value = "";
+    ville.value = "";
+    return false;
   }
 
 }

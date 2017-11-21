@@ -4,6 +4,8 @@
           <th scope="col">Nom</th>
           <th scope="col">Prénom</th>
           <th scope="col">Adresse</th>
+          <th scope="col">Département</th>
+          <th scope="col">Poste</th>
           <th scope="col"></th>
           <th scope="col"></th>
         </tr>
@@ -13,6 +15,8 @@
           <td>{{collaborateur.nom}}</td>
           <td>{{collaborateur.prenom}}</td>
           <td>{{collaborateur.adresse}} , {{collaborateur.codePostal}} {{collaborateur.ville}}</td>
+          <td>{{collaborateur.departement.nom}}</td>
+          <td>{{collaborateur.poste.nom}}</td>
           <td><a class="btn btn-warning" routerLink="/editer/{{collaborateur.id}}">Editer</a></td>
           <td><button type="button" class="btn btn-danger">Supprimer</button></td>
         </tr>
